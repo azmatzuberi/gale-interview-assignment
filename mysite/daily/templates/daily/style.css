@@ -1,0 +1,8 @@
+/*Custom Stylesheet*/
+div.col-xs-12.col-sm-9 div.jumbotron h1 {
+	font-size: 30px;
+}
+
+img.hp-images {
+	width: 400px;
+}
