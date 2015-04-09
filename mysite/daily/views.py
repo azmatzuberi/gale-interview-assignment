@@ -1,11 +1,15 @@
+# Imports
+# Below line calls in random
 from random import shuffle
+# Helps render response 	
 from django.shortcuts import render
+# Helps render html
 from django.template import loader
 from django.http import HttpResponse
 from daily.models import Article
-
 from django.shortcuts import render, get_object_or_404
 
+# Definition declaration
 def detail(request, article_id):
   my_article = get_object_or_404(Article, pk=article_id)
   pic = get_object_or_404(Article, pk=article_id)
@@ -25,11 +29,12 @@ def detail(request, article_id):
   	'read_next_articles': read_next_articles,
   }
   
+  # Renders response and page
   return render(request, 'daily/detail.html', azmat)
 
-
+# Definition declaration
 def index(request):
-    latest_article_list = Article.objects.order_by('-publ_date')[:4]
+    latest_article_list = Article.objects.order_by('publ_date')[:4]
     
     # Get a list of every article
     all_articles = list(Article.objects.all())
@@ -49,4 +54,5 @@ def index(request):
       'preview_article': preview_article
     }
 
+    # Renders response and page
     return render(request, 'daily/index.html', cxt)

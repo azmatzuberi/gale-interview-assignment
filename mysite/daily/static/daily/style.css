@@ -2,19 +2,24 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
 /*Custom Stylesheet*/
+
+/*Background Color*/
 body {
 	background-color: #ECECEA !important;
 }
 
+/*Title Heading of Website*/
 html body div.container h1 {
 	font-size: 65px;
 	font-family: 'Lobster', cursive !important;
 }
 
+/*Preview Section Heading*/
 div.jumbotron h1 a {
 	font-family: 'Lora', serif;
 }
 
+/*Preview Section Background Color and Image*/
 .jumbotron {
 	background-color: white !important;
 }
@@ -30,6 +35,9 @@ div.jumbotron h1 a {
 	font-size: 15px !important;
 }
 
+/*Navigation*/
+
+/*Logo*/
 #logo {
 	width: 200px;
 	padding-left: 50px;
@@ -41,18 +49,53 @@ div.jumbotron h1 a {
 	float: right;
 }
 
+#hamburger-id {
+	height: 30px;
+}
+
+#hamburger {
+	float: left;
+}
+
+#search {
+	float: right;
+	margin-top: -5px;
+}
+
 div.col-xs-12.col-sm-9 div.jumbotron h1 {
 	font-size: 30px;
+}
+
+ol {
+	counter-reset: my-badass-counter;
 }
 
 ol.hp-articles li {
 	list-style: none;
 }
 
+/*Ordered List Styling*/
+ol.hp-articles li:before {
+	content: counter(my-badass-counter);
+	counter-increment: my-badass-counter;
+	font-size: 20px;
+	border: 1px solid gray;
+	border-style: dotted;
+	padding: 5px;
+	/* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  	-webkit-border-radius: 20px; 
+	/* Firefox 1-3.6 */
+	-moz-border-radius: 20px; 
+	/* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+	border-radius: 20px; 
+}
+
+/*Ordered List Images*/
 img.hp-images {
 	width: 200px;
 	border-radius: 10px;
 	box-shadow: 0px 5px 5px #888888;
+	margin-left: 20px
 }
 
 .blurb {
@@ -62,6 +105,8 @@ img.hp-images {
 .article_info {
 	font-style: italic;
 }
+
+/*Read Next Section*/
 
 #rd-nxt {
 	display: inline;
@@ -104,12 +149,14 @@ hr {
 	box-shadow: 10px 10px 5px #888888;
 }
 
+/*Paragraph Styling*/
 .detail-p {
 	padding-top: 10px;
 	padding-right: 10px;
 	text-align: justify;
 }
 
+/*Drop Letter*/
 #first-p:first-letter { 
 	float: left; 
 	color: #003399; 
@@ -121,6 +168,7 @@ hr {
 	font-family: 'Lobster', cursive;
 }
 
+/*Nexus Ad Image*/
 #nexus {
 	width: 350px;
 	border: solid 1px gray;
@@ -128,6 +176,7 @@ hr {
 	margin-left: 10px;
 }
 
+/*Responsive Configuration*/
 @media (max-width: 600px) {
 	#logo {
 		margin-left: 70px;

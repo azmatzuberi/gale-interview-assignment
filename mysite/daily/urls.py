@@ -8,4 +8,3 @@ urlpatterns = patterns('',
     # /dilay/3/
     url(r'^(?P<article_id>\d+)/$', views.detail, name='detail'),
     )
-# urlpatterns += staticfiles_urlpatterns()

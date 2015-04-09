@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character Set Declaration -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive Declaration -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <meta name="description" content="Sample Project">
+    <meta name="author" content="Azmat Zuberi">
     <title>Daily Newspaper</title>
+    <!-- Django Static File Load -->
     {% load staticfiles %}
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Custom styles for this template -->
+    <!-- Bootstrap CSS - CDNs are referenced at the bootom of page -->
+    <!-- Template Stylesheet -->
     <link href="{% static 'daily/offcanvas.css' %}" rel="stylesheet">
+    <!-- My Own  Custom Stylesheet -->
     <link href="{% static 'daily/style.css' %}" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -26,9 +26,11 @@
     <![endif]-->
   </head>
   <body>
+    <!-- Side Navigation -->
     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
       <div class="list-group">
         <img id="logo" src="/media/articles/logo.png">
+        <a href="" id="hamburger-id" class="list-group-item"><img id="hamburger" src="/media/articles/hamburger.png" alt="menu"><img id="search" src="/media/articles/search.png" alt="search"></a>
         <a href="/daily/" class="list-group-item active"><img src="/media/articles/home.png" alt="home">Homepage</a>
         <a href="#" class="list-group-item"><img src="/media/articles/toronto.png" alt="toronto">Your Toronto</a>
         <a href="#" class="list-group-item"><img src="/media/articles/opinion.png" alt="opinion">Opinion</a>
@@ -36,11 +38,13 @@
         <a href="#" class="list-group-item"><img src="/media/articles/weather.png" alt="weather">Weather</a>
       </div>
     </div><!--/.sidebar-offcanvas-->
+    <!-- Main Container -->
     <div class="container">
     <h1>Daily: Top 10 List</h1>
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs"></p>
+          <!-- Preview Section - Article at random -->
           <div class="jumbotron">
             {% for article in preview_article %}
               <h1><a href="{% url 'detail' article_id=article.pk %}">{{ article.title }}</a></h1>
@@ -49,6 +53,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem quam, sagittis pulvinar facilisis vel, suscipit in erat. Nulla tellus nisl, faucibus eget dignissim sit amet, tempus nec augue. Nulla venenatis, purus dapibus egestas ullamcorper, odio ante commodo ex, et finibus arcu purus a ante.</p>
             {% endfor %}
           </div>
+          <!-- Order List of Article -->
           <ol class="hp-articles">
             {% for my_article in my_article_list %}
               <h2>{{ my_article.title }}</h2>
@@ -57,10 +62,12 @@
             {% endfor %}  
           </ol>
           <hr>
+          <!-- What to Read Next Section -->
           <h3  id="rd-nxt">What to Read Next</h3>
           <img id="right" class="arrows" src="/media/articles/right.png" alt="right">
           <img id="left" class="arrows" src="/media/articles/left.png" alt="left">
           <hr>
+          <!-- List of Random Articles -->
           <ul class="read-next">
           {% for article in read_next_articles %}
             <li class="read-next-block"><a href="{% url 'detail' article_id=article.pk %}"> 
@@ -69,7 +76,6 @@
             </li>
           {% endfor %}
           </ul>
-          
           <footer>
             <p>&copy; Daily Newspaper - By Azmat</p>
           </footer>
@@ -80,18 +86,12 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!--<script src="../../dist/js/bootstrap.min.js"></script>-->
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
     <script src="offcanvas.js"></script>-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </body>
