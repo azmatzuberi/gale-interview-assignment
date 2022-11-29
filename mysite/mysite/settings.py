@@ -20,7 +20,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&rfp6ds0i5+*4e4vhaog42^i$rzbh_tqldzi5fdckd%%p%805k'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
